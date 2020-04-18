@@ -16,10 +16,10 @@ NortelCustomer.objects.values('id','ipUplink__ipMgmt').all()
 NortelCustomer.objects.values('id','ipUplink__ipMgmt').filter(ipUplink__ipMgmt='10.1.255.105')
 # how to get primary key
 datas_select = NortelCustomer.objects.get(id=id_edit)
-        print(datas_select.ipUplink.buildingName) #summon coloumn building name in related ip uplink
+print(datas_select.ipUplink.buildingName) #summon coloumn building name in related ip uplink
 
 
-Method 2:
+# Method 2:
 NortelCustomer.objects.all().prefetch_related('ipUplink')
 a = NortelCustomer.objects.all().prefetch_related('ipUplink')
 for x in a:
